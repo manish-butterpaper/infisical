@@ -7,8 +7,7 @@ services:
     autoDeploy: false
     # healthCheckPath: /api/status
     repo: https://github.com/Infisical/infisical.git
-    envVarGroups:
-      - name: infisical.env
-        envVars:
-          - key: PORT
-            value: 443
+    envVars:
+      - fromGroup: infisical-grp
+      - key: PORT
+        value: 443
