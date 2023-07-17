@@ -19,6 +19,26 @@ services:
         generateValue: true
       - key: JWT_PROVIDER_AUTH_SECRET
         generateValue: true
+      - key: TELEMETRY_ENABLED
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_SECURE
+        sync: false
+      - key: SMTP_FROM_ADDRESS
+        sync: false
+      - key: SMTP_FROM_NAME
+        sync: false
+      - key: CLIENT_ID_GOOGLE
+        sync: false
+      - key: CLIENT_SECRET_GOOGLE
+        sync: false
       - key: MONGO_URL
         sync: false
       - key: PORT
