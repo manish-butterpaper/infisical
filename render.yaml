@@ -1,45 +1,14 @@
 services:
   - type: web
     name: infisical
+    plan: free
     env: docker
     dockerfilePath: ./Dockerfile.standalone-infisical
     autoDeploy: false
     # healthCheckPath: /api/status
     repo: https://github.com/Infisical/infisical.git
-    envVars:
-      - key: ENCRYPTION_KEY
-        generateValue: true
-      - key: JWT_SIGNUP_SECRET
-        generateValue: true
-      - key: JWT_REFRESH_SECRET
-        generateValue: true
-      - key: JWT_SERVICE_SECRET
-        generateValue: true
-      - key: JWT_AUTH_SECRET
-        generateValue: true
-      - key: JWT_PROVIDER_AUTH_SECRET
-        generateValue: true
-      - key: TELEMETRY_ENABLED
-        sync: false
-      - key: SMTP_HOST
-        sync: false
-      - key: SMTP_USERNAME
-        sync: false
-      - key: SMTP_PASSWORD
-        sync: false
-      - key: SMTP_PORT
-        sync: false
-      - key: SMTP_SECURE
-        sync: false
-      - key: SMTP_FROM_ADDRESS
-        sync: false
-      - key: SMTP_FROM_NAME
-        sync: false
-      - key: CLIENT_ID_GOOGLE
-        sync: false
-      - key: CLIENT_SECRET_GOOGLE
-        sync: false
-      - key: MONGO_URL
-        sync: false
-      - key: PORT
-        value: 443
+    envVarGroups:
+      - name: infisical.env
+        envVars:
+          - key: PORT
+            value: 443
