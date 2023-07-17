@@ -2,9 +2,10 @@ services:
   - type: web
     name: infisical
     plan: free
+    region: singapore
     env: docker
     dockerfilePath: ./Dockerfile.standalone-infisical
-    autoDeploy: false
+    autoDeploy: true
     # healthCheckPath: /api/status
     repo: https://github.com/Infisical/infisical.git
     envVars:
